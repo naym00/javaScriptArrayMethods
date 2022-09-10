@@ -7,24 +7,45 @@ let items = [
   { name: "Computer", price: 1000 },
   { name: "Keyboard", price: 25 },
 ];
+/*
+const afterFilter = items.filter((item) =>  item.price <= 100);
+console.log(afterFilter);
+*/
 
-// const afterFilter = items.filter((item) =>  item.price <= 100);
-// const afterFilter = items.filter((item) =>  {
-//   if(item.price<=25)
-//   {
-//     return item;
-//   }});
-// console.log(afterFilter);
+/*
+const afterFilter = items.filter((item) =>  {
+  if(item.price<=25)
+  {
+    return item;
+  }});
+  console.log(afterFilter);
+*/
 
-// const afterMap = items.map((item) =>  item.price);
-// const afterMap = items.map((item) =>  {
-//   if (item.price<=25)
-//   {
-//     return item;
-//   }});
-// console.log(afterMap);
+/*
+const sortedArray = items.sort((a, b) => a.price - b.price);
+console.log(sortedArray);
+*/
 
-// items.forEach((item) =>  console.log(item.name));
+/*
+const afterMap = items.map((item) =>  item.price);
+console.log(afterMap);
+*/
+
+/*
+const afterMap = items.map((item) =>  {if(item.price>200){return item.price}});
+console.log(afterMap);
+*/
+
+/*
+const afterMap = items.map((item) =>  {
+  if (item.price<=25)
+  {
+    return item;
+  }});
+console.log(afterMap);
+*/
+
+items.forEach((item) =>  console.log(item.name));
 // items.forEach((item) => {for(let i=0; i<item.name.length; i++){console.log(item.name[i])}});
 // let object = [
 //   { name: ['B', 'i', 'k', 'e'], price: 100 },
@@ -338,22 +359,39 @@ meeting
 
 ///*
 // Promise
-console.log('1');
-const meeting = new Promise((resolve, reject) => {
-  if (false) {
-    resolve({name: "Fake Meeting", male: 3, female: 2 });
-  } else {
-    reject('No meeting');
-  }
-});
-console.log('2');
-const addToCalender = function promiseMeeting(meetingDetails) {
-  return Promise.resolve(`Meeting name ${meetingDetails.name} and Male ${meetingDetails.male} and Female ${meetingDetails.female}`);
-};
-console.log('3');
-meeting
-  .then(addToCalender)
-  .then((res) => console.log(JSON.parse(JSON.stringify(res))))
-  .catch((err) => console.log(err));
-console.log('4');
+// console.log('1');
+// const meeting = new Promise((resolve, reject) => {
+//   if (false) {
+//     resolve({name: "Fake Meeting", male: 3, female: 2 });
+//   } else {
+//     reject('No meeting');
+//   }
+// });
+// console.log('2');
+// const addToCalender = function promiseMeeting(meetingDetails) {
+//   return Promise.resolve(`Meeting name ${meetingDetails.name} and Male ${meetingDetails.male} and Female ${meetingDetails.female}`);
+// };
+// console.log('3');
+// meeting
+//   .then(addToCalender)
+//   .then((res) => console.log(JSON.parse(JSON.stringify(res))))
+//   .catch((err) => console.log(err));
+// console.log('4');
 //*/
+
+// Defining function to get unique values from an array
+function getUnique(array){
+  var uniqueArray = [];
+  
+  // Loop through array values
+  for(var value of array){
+      if(uniqueArray.indexOf(value) === -1){
+          uniqueArray.push(value);
+      }
+  }
+  return uniqueArray;
+}
+
+var names = ["John", "Peter", "Clark", "Harry", "John", "Alice"];
+var uniqueNames = getUnique(names);
+console.log(uniqueNames); // Prints: ["John", "Peter", "Clark", "Harry", "Alice"]
